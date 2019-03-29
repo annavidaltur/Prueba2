@@ -11,50 +11,20 @@
 <head>
 </head>
 <body>
-<h2>Hello world</h2>
-  <section id="contactus" class="section-padding">	
-	<div class="container mt-5">
-		<h2>contact us.</h2>
-	</div>
-	<div class="container">			
-	<div class="row mb-3">
-		<div class="col-md-6 themed-grid-col">
-			<div class="pb3">
-				<form id="contact-form" name="contact-form" action="php/mail.php" method="POST" role="form">
-				  <div class="form-group">                            
-					<label for="email">Email address</label>
-					<input type="email" class="form-control" id="email" placeholder="name@example.com">
-				  </div>
-		    </div>
-			<div class="pb3">
-				<div class="form-group">
-				<label for="subject">Select one</label>
-				<select class="form-control" id="subject" name="subject">
-				  <option>Opción 1</option>
-				  <option>Opción 2</option>
-				  <option>Opción 3</option>
-				  <option>Opción 4</option>			  
-				</select>
-			  </div>
-		    </div>
-			<div class="pb3">
-				<div class="form-group">							
-					<label for="message">Example textarea</label>
-					<textarea class="form-control" id="message" name="message" rows="5"></textarea>
-				</div>
-		    </div>
-			<div class="pb3">
-				<button type="submit" class="btn btn-secondary mb-5">Send it</button>
-				<a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-			</div>
-		</div>
-		<div class="col-md-4 themed-grid-col pt-4">
-				
-			</div>
-		</form>
-		</div>
-	</section>
-	 
+	<h2>Hello world</h2>
+	<form id="contactform" method="POST">
+	    <input type="text" placeholder="Your name" name="name">
+	    <input type="email" placeholder="Your email" name="_replyto">
+	    <textarea placeholder="Your message" name="message"></textarea>
+	    <input type="submit" value="Send">
+		
+	    <input type="hidden" name="_subject" value="Website contact" />
+	    <input type="text" name="_gotcha" style="display:none" />	    
+	</form>
+	<script>
+    	    var contactform =  document.getElementById('contactform');
+    	    contactform.setAttribute('action', '//formspree.io/' + 'anna' + '.' + 'vidal2' + '@' + 'email' + '.' + 'com');
+	</script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/js/contact.js"></script>
